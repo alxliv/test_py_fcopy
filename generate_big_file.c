@@ -37,6 +37,7 @@ int main(void) {
         fprintf(stderr, "malloc failed\n");
         return 1;
     }
+    fill_random(buf, CHUNK_BYTES);
 
     FILE *f = fopen(OUTPUT, "wb");
     if (!f) {
@@ -53,18 +54,19 @@ int main(void) {
         if (TOTAL_BYTES - written < (unsigned long long)n) {
             n = (size_t)(TOTAL_BYTES - written);
         }
-        fill_random(buf, n);
+
         fwrite(buf, 1, n, f);
         written += n;
     }
 
     fclose(f);
-    free(buf);
 
     double elapsed = (double)(clock() - start) / CLOCKS_PER_SEC;
     double written_mb = (double)written / (1024.0 * 1024.0);
     double mb_per_s = written_mb / elapsed;
     printf("Wrote %llu bytes to %s in %.1fs (%.1f MB/s)\n",
            written, OUTPUT, elapsed, mb_per_s);
+
+    free(buf);
     return 0;
 }
