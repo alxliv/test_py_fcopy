@@ -1,0 +1,62 @@
+# Compiled Object files
+*.o
+*.obj
+*.slo
+*.lo
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.dll
+*.so
+*.dylib
+
+# Compiled Static libraries
+*.lib
+*.a
+*.la
+*.lai
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Debugger & Linker files
+*.pdb
+*.ilk
+*.exp
+*.map
+
+# Build directories (common naming conventions)
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+# Ignore everything under build
+build/
+
+bin/
+obj/
+
+# Visual Studio specific
+.vs/
+*.user
+*.suo
+*.ncb
+*.opensdf
+*.sdf
+*.cachefile
+*.VC.db
+*.VC.VC.opendb
+*.bin
+
+# CMake generated files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+install_manifest.txt
+compile_commands.json
